@@ -1,0 +1,8 @@
+src/*
+tests/*
+docs/*
+eslint.config.js
+.editorconfig
+.vscode
+*.log
+/node_modules/

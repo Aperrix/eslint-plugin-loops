@@ -1,0 +1,51 @@
+{
+    "version": "0.1.0",
+    "name": "eslint-plugin-loops",
+    "umd:name": "eslint-plugin-loops",
+    "repository": "aperrix/eslint-plugin-loops",
+    "description": "An ESLint plugin that prevent loops usage",
+    "license": "MIT",
+    "author": {
+        "name": "Aperrix",
+        "email": "aperrix@gmail.com",
+        "url": "https://github.com/aperrix"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "type": "module",
+    "source": "src/index.js",
+    "exports": {
+        ".": {
+            "require": "./dist/index.cjs",
+            "default": "./dist/index.modern.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.module.js",
+    "unpkg": "./dist/index.umd.js",
+    "scripts": {
+        "reinstall": "rimraf pnpm-lock.yaml node_modules && pnpm install",
+        "preinstall": "npx -y only-allow pnpm",
+        "prepublishOnly": "npm version minor && git push origin main --tags",
+        "prepare": "pnpm lint && pnpm test && pnpm build",
+        "update-packages": "pnpm dlx taze --interactive",
+        "build": "rimraf dist && microbundle",
+        "test": "node tests/index.test.js",
+        "lint": "TIMING=10 eslint . --fix"
+    },
+    "keywords": [
+        "eslint-plugin",
+        "eslintplugin",
+        "package",
+        "module"
+    ],
+    "devDependencies": {
+        "@stylistic/eslint-plugin-js": "^1.7.2",
+        "eslint": "^9.1.1",
+        "eslint-plugin-eslint-plugin": "^6.0.0",
+        "microbundle": "^0.15.1",
+        "rimraf": "^5.0.5"
+    }
+}
