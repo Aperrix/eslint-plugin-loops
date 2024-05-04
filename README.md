@@ -35,8 +35,8 @@ You can allow the use of some loops :
 ```js
 {
     rules: {
-        "loops/no-loops": [
-            "error", {
+        "loops/no-loops": [ "error",
+            {
                 exceptions: ["for", "forOf", "forIn", "forEach", "while", "doWhile"]
             }
         ]
