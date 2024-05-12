@@ -21,8 +21,11 @@ export const noLoopsRule = {
         type      : "object",
         properties: {
           exceptions: {
-            type: "array",
-            // enum: ["for", "forOf", "forIn", "forEach", "while", "doWhile"]
+            type : "array",
+            items: {
+              type: "string",
+              enum: ["for", "forOf", "forIn", "forEach", "while", "doWhile"]
+            }
           }
         },
         additionalProperties: false
