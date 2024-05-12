@@ -9,6 +9,14 @@ const plugin = {
   },
   rules: {
     "no-loops": noLoopsRule
+  },
+  configs: {
+    recommended: {
+      plugins: ["loops"],
+      rules  : {
+        "loops/no-loops": "error"
+      }
+    }
   }
 }
 
